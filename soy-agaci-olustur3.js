@@ -1061,7 +1061,7 @@ var smq = {
               //create popup nodes
               this.nodePopup = document.createElement("smq-popup");
               this.nodePopup.innerHTML = '<div class="window"><a class="close">x</a class="close"><div class="api-content"></div></div>';
-              this.nodePopup.getElementsByClassName("api-content")[0].append(document.getElementsByTagName('svg')[0]);
+              this.nodePopup.getElementsByClassName("api-content")[0].appendChild(document.getElementsByTagName('svg')[0]);
 
               //click "x" button to close popup window
               this.nodeClose = this.nodePopup.getElementsByClassName("close")[0];
