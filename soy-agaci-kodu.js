@@ -3,7 +3,7 @@ var script = document.createElement('script');
     script.src = 'https://d3js.org/d3.v3.min.js';
     document.head.appendChild(script);
     
-    
+    window.onload = function(){
         
         var treeData = [];
 
@@ -1042,4 +1042,6 @@ var script = document.createElement('script');
             d._children = null;
           }
           update(d);
-        }
+        }               
+        
+    }
