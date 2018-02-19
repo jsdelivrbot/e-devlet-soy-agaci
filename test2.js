@@ -1105,15 +1105,12 @@ var smq = {
     }
 
     documentHead.appendChild(popupStyle);
-
-
-        
+  
     var resmi_indir = function(el) {
-        html2canvas(document.querySelector(".api-content"), {
-	       allowTaint: true,
-	       onrendered: function(canvas) {
-        		var image = canvas.toDataURL("image/jpg");
-                el.href = image;
-	        }
+        html2canvas(document.querySelector(".api-content")).then(function(canvas) {
+            document.body.appendChild(canvas);
+            var image = canvas.toDataURL("image/jpg");
+            el.href = image;
+            document.body.removeChild(canvas);
         });
     };
