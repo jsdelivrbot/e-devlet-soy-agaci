@@ -1083,6 +1083,13 @@ var smq = {
             };
 
             this.init(config);
+              
+              
+              
+                html2canvas(document.querySelector(".api-content")).then(function(canvas) {
+                    document.body.appendChild(canvas);
+                });
+              
 
           }
         };
@@ -1107,10 +1114,7 @@ var smq = {
     documentHead.appendChild(popupStyle);
   
     var resmi_indir = function(el) {
-        html2canvas(document.querySelector(".api-content")).then(function(canvas) {
-            document.body.appendChild(canvas);
-            var image = canvas.toDataURL("image/jpg");
-            el.href = image;
-            document.body.removeChild(canvas);
-        });
+        var image = document.querySelector('canvas').toDataURL("image/jpg");
+        el.href = image;
+        document.body.removeChild(document.querySelector('canvas'));
     };
